@@ -1,0 +1,68 @@
+{
+	"fileTypes": [],
+	"injectionSelector": "L:source -comment -string",
+	"patterns": [
+		{
+			"name": "taggedTemplates",
+			"contentName": "meta.embedded.block.gql",
+			"begin": "(?x)(\\s*gql)((`))",
+			"beginCaptures": {
+				"1": {
+					"name": "entity.name.function.tagged-template.js"
+				},
+				"2": {
+					"name": "string.js"
+				},
+				"3": {
+					"name": "punctuation.definition.string.template.begin.js"
+				}
+			},
+			"end": "(`)",
+			"endCaptures": {
+				"0": {
+					"name": "string.js"
+				},
+				"1": {
+					"name": "punctuation.definition.string.template.end.js"
+				}
+			},
+			"patterns": [
+				{
+					"include": "source.graphql"
+				}
+			]
+		},
+
+		{
+			"name": "taggedTemplates",
+			"contentName": "meta.embedded.block.html",
+			"begin": "(?x)(\\s*html)((`))",
+			"beginCaptures": {
+				"1": {
+					"name": "entity.name.function.tagged-template.js"
+				},
+				"2": {
+					"name": "string.js"
+				},
+				"3": {
+					"name": "punctuation.definition.string.template.begin.js"
+				}
+			},
+			"end": "(`)",
+			"endCaptures": {
+				"0": {
+					"name": "string.js"
+				},
+				"1": {
+					"name": "punctuation.definition.string.template.end.js"
+				}
+			},
+			"patterns": [
+				{
+					"include": "text.html.basic"
+				}
+			]
+		}
+	],
+	"scopeName": "inline.literal-tag"
+}
